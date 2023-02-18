@@ -1,0 +1,95 @@
+:root {
+    --bg-color: rgb(20, 20, 20);
+
+    --card-color: rgb(23, 23, 23);
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 920px;
+    width: calc(100% - 20px);
+}
+
+#cards:hover > .card > .card-border {
+    opacity: 1;
+}
+
+.card {
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 260px;
+    width: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before,
+.card > .card-border {
+    
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    transition: opacity 500ms;
+    content: "";
+    border-radius: inherit;
+}
+
+.card::before {    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.16),
+         transparent 40%
+    );
+    z-index: 3;
+}
+
+/* The "card-border" element can actually be 
+replaced with an "::after" pseudo element on the
+"card" element, removing the need for an extra div.
+
+2. On the "card-content" element, instead of setting
+the height/width to calc(100% - 2px) and 
+setting a margin of 1px. You can set 
+"position: absolute" and "inset: 1px" 
+and it will achieve the same border effect 
+in a cleaner way.*/
+
+.card > .card-border {
+    background: radial-gradient(
+        400px circle at var(--mouse-x) var(--mouse-y),
+          rgba(255, 255, 255, 0.5),
+         transparent 40%
+    );
+    z-index: 1;
+}
+
+.card .card-content {
+    background-color: var(--card-color);
+    border-radius: inherit;
+    margin: 1px;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    position: relative;
+    z-index: 2;
+}
