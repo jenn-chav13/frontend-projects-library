@@ -1,0 +1,68 @@
+:root {
+    --pink: hsl(338, 70%, 55%);
+    --light-blue: hsl(182, 54%, 80%);
+    --teal: hsl(183, 70%, 62%);
+    --white: hsl(334, 7%, 95%);
+}
+
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(224, 32%, 12%);
+    background-image: conic-gradient(from 0deg at 50% 50%, blue, purple, purple, blue);
+    background-blend-mode: multiply;
+    color: var(--light-blue);
+    min-block-size: 100svh;
+    display: grid;
+    place-items: center;
+}
+
+.card-wrapper {
+    font-size: 3rem;
+    font-weight: bold;
+    background: hsl(222, 45%, 7%);
+    padding: 2rem;
+    border-radius: 1rem;
+
+    transform: 
+    perspective(5000px)
+        rotateY(var(--rotate-y))
+        rotateX(var(--rotate-x)); 
+    
+    position: relative;   
+    
+    transform-style: preserve-3d;
+}
+
+
+.card-wrapper > * {
+    text-shadow: 0 0 0.3em currentColor;
+    text-align: center;
+}
+
+.card-wrapper::before,
+.card-wrapper::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+
+/* Shadow */
+.card-wrapper::before {
+    inset: 0.75rem;
+    background: black;
+    transform: translateZ(-49px);
+    filter: blur(1rem);
+    opacity: 0.5;
+}
+
+/** Gradient */
+.card-wrapper::after {
+    inset: -1rem;
+    background: linear-gradient(-45deg, #db6b18, #d4c311);
+    transform: translateZ(-50px);
+}
