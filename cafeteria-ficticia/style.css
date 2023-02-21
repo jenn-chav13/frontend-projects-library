@@ -63,6 +63,7 @@ header img {
     flex-direction: column;
 }
 .navigation-bar .hamburger-menu {
+    border: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,6 +72,7 @@ header img {
     width: 45px;
     background-color: var(--Rojo);
     float: right;
+    cursor: pointer;
 }
 
 hr {
@@ -182,4 +184,40 @@ span.bold {
     .section-wrapper .homepage-section {
         flex: 1;
     }
+}
+
+@media screen and (min-width: 800px) {
+
+    .navigation-bar .hamburger-menu {
+        display: none;
+    }
+
+    .homepage-section {
+        padding: 10%;
+    }
+
+    .homepage-section h1 {
+        margin-inline: 26%;
+    }
+
+    .homepage-section.hero {
+        min-height: 400px;
+        height: 100%;
+    }
+
+
+    #menu-items {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        background-color: transparent;
+        max-height: unset;
+    }
+    
+    
+    #menu-items li a {
+        color: var(--Texto-claro);
+    
+    }
+    
 }
