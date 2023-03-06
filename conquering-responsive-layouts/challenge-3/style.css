@@ -1,0 +1,94 @@
+:root {
+    --color-green-vogue: hsl(192, 36%, 21%);
+    --color-cyprus: hsl(185, 73%, 10%);
+    --color-turquoise: hsl(184, 68%, 54%);
+    --color-ce-soir: hsl(280, 22%, 49%);
+    --color-eclipse: hsl(0, 0%, 23%);
+    --color-deep-sea: hsl(184, 71%, 26%);
+    --color-white: white;
+    --color-white-with-transparency: hsla(0, 0%, 100%, 0.851);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.container {
+    padding: 100px 0;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.col {
+    width: 100%;
+    text-align: center;
+}
+
+.content {
+    width: 80%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.content-text {
+    width: 60%;
+}
+
+.description {
+    color: var(--color-white-with-transparency);
+}
+
+.cta {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-cyprus);
+    background-color: var(--color-turquoise);
+    font-weight: 700;
+    padding: 0.762em 2.380em;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    letter-spacing: 1.5;
+}
+
+.bg-green {
+    background-color: var(--color-green-vogue);
+    color: var(--color-white);
+}
+
+.clr-violet {
+    color: var(--color-ce-soir);
+}
+
+.clr-eclipse {
+    color: var(--color-eclipse);
+}
+
+.bg-deep-sea {
+    background-color: var(--color-deep-sea);
+    color: var(--color-white);
+}
