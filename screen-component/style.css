@@ -1,0 +1,64 @@
+:root {
+    --background-rgb: 29 30 34;
+    
+    --blue-rgb: 33 150 243;
+    --primary-rgb: var(--blue-rgb);
+    
+    --blob-color-1: rgb(var(--blue-rgb));
+    --blob-color-2: dodgerblue;
+
+    --primary-color: hsla(31, 90%, 54%, 0.8);
+    /* --primary-color-dimmed: hsla(207, 90%, 54%, 0.15); */
+    --primary-color-dimmed: hsla(31, 90%, 54%, 0.15);
+}
+
+body {
+    background-color: rgb(29, 30, 34);
+    height: 100dvh;
+}
+
+main {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 10px;
+}
+.screen {
+    width: 400px;
+    height: 500px;
+    border: 1px solid var(--primary-color);
+    border-radius: 1rem;
+    background-color: var(--primary-color-dimmed);
+    overflow: hidden;
+    position: relative;
+}
+
+.screen > img {
+    position: absolute;
+    filter: sepia(25%) hue-rotate(-10deg);
+    width: 100%;
+   /*animation: pan-image 2s infinite linear;*/
+}
+
+.screen-overlay {
+    position: relative;
+    background: linear-gradient(
+        var(--primary-color-dimmed) 2px,
+        transparent 3px,
+        transparent 9px
+    );
+    background-size: 100% 9px;
+    height: 100%;
+    animation: pan-overlay 22s infinite linear;
+}
+
+@keyframes pan-overlay {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% -100%;
+    }
+}
