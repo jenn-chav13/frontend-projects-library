@@ -112,3 +112,42 @@ p {
     background-color: var(--color-deep-sea);
     color: var(--color-white);
 }
+
+
+header {
+    background: #136c72;
+    padding: 1em 0;
+    display: flex;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav__link--button {
+    background: #fff;
+    color: #136c72;
+    padding: .25em 1em;
+    border-radius: 10em;
+}
+
+.nav__link:hover {
+    opacity: .75;
+}
